@@ -6,7 +6,8 @@ public class MainApp {
 
     public static void main(String[] args) {
         Move m = new Walk();
-        Turtle t = new Turtle(m);
+        Turtle t = new Turtle();
+        t.setMove(m);
         t.go(DISTANCE);
     }
 }

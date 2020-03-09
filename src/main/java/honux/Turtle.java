@@ -1,19 +1,17 @@
 package honux;
 
-import java.util.Random;
-
 public class Turtle {
 
     private Move move;
 
-    public Turtle(Move move) {
+    public void setMove(Move move) {
         this.move = move;
     }
 
     public int go(int finalLength) {
         int time = 0;
         int distance = 0;
-        while(distance < finalLength && time != 999) {
+        while (distance < finalLength && time != 999) {
             distance += move.forward();
             time++;
         }

@@ -1,3 +1,5 @@
+package honux;
+
 import java.util.Random;
 
 public class Turtle {
@@ -12,11 +14,4 @@ public class Turtle {
         return 0;
     }
 
-    public static void main(String[] args) {
-        Turtle t = new Turtle();
-        for (int i = 0; i < 10; i++) {
-            System.out.print(t.move());
-        }
-        System.out.println();
-    }
 }

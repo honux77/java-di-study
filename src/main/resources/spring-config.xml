@@ -5,6 +5,8 @@
 
     <bean id="walk" class="honux.Walk"></bean>
     <bean id="fastStep" class="honux.FastStep"></bean>
-    <bean id="turtle" class="honux.Turtle"></bean>
+    <bean id="turtle" class="honux.Turtle">
+        <property name="move" ref="fastStep"></property>
+    </bean>
 
 </beans>

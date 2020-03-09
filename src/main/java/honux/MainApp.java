@@ -9,11 +9,7 @@ public class MainApp {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
-        Move walk = (Move) ctx.getBean("walk");
-        Move fastStep = (Move) ctx.getBean("fastStep");
         Turtle t = (Turtle) ctx.getBean("turtle");
-        
-        t.setMove(walk);
         t.go(DISTANCE);
     }
 }

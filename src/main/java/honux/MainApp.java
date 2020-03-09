@@ -1,11 +1,12 @@
 package honux;
 
 public class MainApp {
+
+    public final static int DISTANCE = 100;
+
     public static void main(String[] args) {
-        Turtle t = new Turtle();
-        for (int i = 0; i < 10; i++) {
-            System.out.print(t.move());
-        }
-        System.out.println();
+        Move m = new Walk();
+        Turtle t = new Turtle(m);
+        t.go(DISTANCE);
     }
 }

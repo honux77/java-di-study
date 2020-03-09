@@ -1,25 +1,48 @@
+import honux.Move;
 import honux.Turtle;
+import honux.Walk;
 import org.junit.jupiter.api.*;
 import static org.assertj.core.api.Assertions.*;
 
 public class TurtleTest {
 
-    private Turtle turtle;
 
     @BeforeEach
     void setup() {
-        turtle = new Turtle();
-
+        System.out.println("테스트 시작");
     }
 
     @Test
-    void 이동() {
-        assertThat(turtle.move()).isEqualTo(1);
+    void 항상_전진() {
+        Turtle t = new Turtle(new Move(){
+            @Override
+            public int forward() {
+                return 1;
+            }
+
+            @Override
+            public String effect() {
+                return "착착";
+            }
+        });
+        assertThat(t.go(100)).isEqualTo(100);
     }
 
     @Test
-    void 정지() {
-        assertThat(turtle.move()).isEqualTo(0);
+    void 항싱_기권() {
+        Turtle t = new Turtle(new Walk(){
+            @Override
+            public int forward() {
+                return 0;
+            }
+        });
+        assertThat(t.go(100)).isEqualTo(999);
+    }
+
+    @Test
+    void 평범한_거북이() {
+        Turtle t = new Turtle(new Walk());
+        assertThat(t.go(100)).isBetween(100, 400);
     }
 
 }

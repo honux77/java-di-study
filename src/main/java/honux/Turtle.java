@@ -6,12 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class Turtle {
 
     @Autowired
-    @Qualifier("walk")
     private Move move;
-
-    public void setMove(Move move) {
-        this.move = move;
-    }
 
     public int go(int finalLength) {
         int time = 0;

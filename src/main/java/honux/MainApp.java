@@ -3,7 +3,7 @@ package honux;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainApp {
 
@@ -14,7 +14,7 @@ public class MainApp {
     public static void main(String[] args) {
         logger.info("======== {} Start =============", MainApp.class.getSimpleName());
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfiguration.class);
         Turtle t = (Turtle) ctx.getBean("turtle");
         int result = t.go(DISTANCE);
         logger.debug("race result: {}", result);

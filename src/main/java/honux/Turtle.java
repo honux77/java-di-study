@@ -1,18 +1,18 @@
 package honux;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
-public class Turtle {
+public class Turtle implements Animal {
 
     @Autowired
     private Move move;
 
-    public int go(int finalLength) {
+    @Override
+    public int go(int distance) {
         int time = 0;
-        int distance = 0;
-        while (distance < finalLength && time != 999) {
-            distance += move.forward();
+        int d = 0;
+        while (d < distance && time != 999) {
+            d += move.forward();
             time++;
         }
 

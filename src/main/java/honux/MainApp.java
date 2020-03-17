@@ -15,7 +15,7 @@ public class MainApp {
         logger.info("======== {} Start =============", MainApp.class.getSimpleName());
 
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfiguration.class);
-        Turtle t = (Turtle) ctx.getBean("turtle");
+        Animal t = (Animal) ctx.getBean("turtle");
         int result = t.go(DISTANCE);
         logger.debug("race result: {}", result);
         logger.info("======== End ============");
